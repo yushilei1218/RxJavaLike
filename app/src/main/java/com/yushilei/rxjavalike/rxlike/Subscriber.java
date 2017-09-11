@@ -8,6 +8,10 @@ package com.yushilei.rxjavalike.rxlike;
 public abstract class Subscriber<T> implements Observer<T> {
     private final Subscriber<?> subscriber;
 
+    public Subscriber() {
+        subscriber = null;
+    }
+
     public Subscriber(Subscriber<?> subscriber) {
         this.subscriber = subscriber;
     }

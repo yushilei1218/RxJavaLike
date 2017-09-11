@@ -21,11 +21,11 @@ public class Observable<T> {
         this.onSubscribe = onSubscribe;
     }
 
-    public final <T> Observable<T> just(final T value) {
+    public static <T> Observable<T> just(final T value) {
         return new SynchronousObservable<T>(value);
     }
 
-    public final Observable<T> from(Iterator<T> iterator) {
+    public static <T> Observable<T> from(Iterable<? extends T> iterator) {
         return new Observable<T>(new IteratorOnSubscribe<T>(iterator));
     }
 
